@@ -1,0 +1,42 @@
+{
+  "name": "project_management",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkarya001/project-management.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "mongoDB",
+    "nodejs",
+    "project",
+    "management"
+  ],
+  "author": "Mukesh Kumar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mkarya001/project-management/issues"
+  },
+  "homepage": "https://github.com/mkarya001/project-management#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "moment": "^2.21.0",
+    "mongoose": "^5.0.11",
+    "passport": "^0.4.0",
+    "react": "^16.2.0",
+    "react-logger": "^1.1.0",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  }
+}
