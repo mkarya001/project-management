@@ -17,7 +17,7 @@ const appConfig = require('./config/config');
 
 const errorHandler = require('./server/error-handler');
 
-app.use(errorHandler.logErrors());
+app.use(errorHandler.logErrors);
 
 
 //App configuration  and middleware
@@ -27,6 +27,8 @@ app.use(cookieParser());
 app.use(session(appConfig.expressSession));
 
 
+// Static / public path 
+app.use(express.static('dist'))
  
  
 // Database connection
@@ -44,10 +46,10 @@ dataBase.once('open', () =>{
 
 
 // Router setup 
-require('./server/router/router')(app);
+require('./server/router/router')(app); 
 
-app.get("*", (req, res) => { 
-    res.sendFile(path.join(__dirname, 'client/index.html'));
+app.get("/home", (req, res) => { 
+    res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 
 
