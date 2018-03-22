@@ -48,7 +48,7 @@ dataBase.once('open', () =>{
 // Router setup 
 require('./server/router/router')(app); 
 
-app.get("/home", (req, res) => { 
+app.get("*", (req, res) => { 
     res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
 

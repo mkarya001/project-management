@@ -1,5 +1,32 @@
 import React, {Component} from 'react';
+import {connect} from "react-redux";
+import { bindActionCreators } from 'redux'
 
-const App = () => <p>This is my new react app</p>;
 
-export default App;
+
+import {fetch} from "../actions"
+ 
+
+const  App = (props) => {
+    console.log(props)
+     return(
+         <div onClick={() => props.callfetch("myname")}>{props.test}</div>
+
+     )
+}
+
+
+
+export default connect((store) => {
+    return {
+        test: store.books.name
+    }
+}, (dispatch) => {
+
+    return bindActionCreators(
+        {
+            callfetch : fetch
+         }, dispatch
+    )
+  
+})(App)
