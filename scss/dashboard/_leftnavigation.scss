@@ -1,0 +1,61 @@
+.dashboard{
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .dashboard-body{
+        flex-grow: 1;
+        align-self: stretch;
+    }
+
+    .dashboard-account{
+        background: #000;
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+        align-items: center;
+        color: #fff;
+
+        h1{
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        ul{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            li{
+                list-style: none;
+                
+                a{
+                    display: block;
+                    padding: 0 10px;
+                    color: #fff;
+                    font-size: 13px;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+#dashboard-navigation{
+    background: #000;
+    width:300px;
+    min-height: 100VH;
+
+    nav{
+
+        ul{
+            margin: 0; 
+            padding: 0;
+        }
+    }
+}

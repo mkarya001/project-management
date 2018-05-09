@@ -2,17 +2,21 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import { bindActionCreators } from 'redux'
 
+import Header from './Header';
 
 
 import {fetch} from "../actions"
  
+import Frontroutes from '../routes/Frontroutes';
 
-const  App = (props) => {
-    console.log(props)
-     return(
-         <div onClick={() => props.callfetch("myname")}>{props.test}</div>
-
-     )
+const  Frontview = (props) => {
+    console.log(props);
+      return(
+         <div>
+             <Header/>
+                <Frontroutes />
+         </div>
+ );
 }
 
 
@@ -29,4 +33,4 @@ export default connect((store) => {
          }, dispatch
     )
   
-})(App)
+})(Frontview);
