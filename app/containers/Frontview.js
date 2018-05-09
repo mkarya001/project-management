@@ -13,8 +13,7 @@ const  Frontview = (props) => {
     console.log(props);
       return(
          <div>
-             <Header/>
-                <Frontroutes />
+             <Frontroutes />
          </div>
  );
 }

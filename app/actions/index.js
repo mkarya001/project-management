@@ -7,4 +7,14 @@ export  function fetch(test) {
         }
     }
 }
- 
+
+export  function changeName(test) {  
+    console.log(test)
+    return {
+        type: "CHANGE",
+        payload: {
+            name: test.username,
+            password: test.password
+        }
+    }
+}

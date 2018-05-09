@@ -1,6 +1,10 @@
 import React, {Component} from 'react';
+import {connect} from "react-redux";
+import { bindActionCreators } from 'redux'
 
-export default class Loginscreen extends Component{
+import {changeName} from "../../actions"
+
+class Loginscreen extends Component{
 
     constructor(props){
         super(props);
@@ -9,11 +13,12 @@ export default class Loginscreen extends Component{
         this.state = {
             user : {}
         }
+        console.log(this.props)
     }
 
     loginSubmit(e){
         e.preventDefault();
-        console.log(this.state.user);
+        this.props.testget(this.state.user)
     }
 
     handleInputChages(event){
@@ -26,7 +31,7 @@ export default class Loginscreen extends Component{
         return(
             <div className="login-screen">
                 <form onSubmit={this.loginSubmit}>
-                    <h2>Login</h2>
+                    <h2>Login</h2>                    
                     <fieldset>
                         <label>Username</label>
                         <input type="text" placeholder="Type your username" name="username" onChange={this.handleInputChages} />
@@ -43,8 +48,30 @@ export default class Loginscreen extends Component{
                         
                     </div>
                 </form>
+                { this.props.name ?
+                    <div>
+                        Value Stored in Redux Store.
+                        <p> Username : {this.props.name} </p>
+                        <p> Password : {this.props.password} </p>
+                    </div> : ''
+                }
             </div>
         )
     }
 
 }
+
+export default connect((store) => {
+    console.log(store);
+    return {
+        ...store.testreducer
+    }
+}, (dispatch) => {
+
+    return bindActionCreators(
+        {
+            testget : changeName
+         }, dispatch
+    )
+  
+})(Loginscreen);
